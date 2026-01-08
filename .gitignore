@@ -1,0 +1,13 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Configuration files with passwords
+*.env
+.env.local
+
+# Logs
+logs/
+*.log
