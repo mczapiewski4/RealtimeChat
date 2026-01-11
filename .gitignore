@@ -11,3 +11,12 @@
 # Logs
 logs/
 *.log
+
+# IntelliJ IDEA compiled files
+out/
+
+# All class files
+*.class
+
+# Other temporary build files
+bin/
