@@ -88,7 +88,7 @@ Navigate to the frontend directory:
 
 ```bash
 npm install
-npm serve
+npm start
 ```
 
 Open your browser and navigate to: `http://localhost:4200`.
