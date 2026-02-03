@@ -66,6 +66,7 @@ public class MessageService {
         Chat chat = chatRepository.findById(chatId)
                 .orElseThrow(() -> new EntityNotFoundException(CHAT_NOT_FOUND));
 
+        final String senderId = getSenderId(chat, authentication);
         final String recipientId = getRecipientId(chat, authentication);
 
         messageRepository.setMessagesToSeenByChatId(chatId, MessageState.SEEN);
@@ -73,8 +74,8 @@ public class MessageService {
         Notification notification = Notification.builder()
                 .chatId(chat.getId())
                 .type(NotificationType.SEEN)
-                .senderId(recipientId)
-                .receiverId(getSenderId(chat, authentication))
+                .senderId(senderId)
+                .receiverId(recipientId)
                 .build();
 
         notificationService.sendNotification(recipientId, notification);
